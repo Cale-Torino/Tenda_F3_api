@@ -108,7 +108,7 @@ function sysReboot(Cookie) {
 
 function AuthSuccess(response,Cookie) {
   console.log('AuthSuccess: '+response);
-  mo = JSON.parse(Cookie);
+  const mo = JSON.parse(Cookie);
   ecos_pw = mo.Cookie;
   console.log('Cookie: '+Cookie);
   document.getElementById('cookie2').innerHTML = ecos_pw;
