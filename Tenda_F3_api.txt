@@ -29,6 +29,232 @@ http://192.168.8.118/goform/getStatus?random=0.2729709691815765&modules=internet
 
 
 
+-------------------------------
+
+POST /login/Auth HTTP/1.1
+Host: 192.168.8.118
+Connection: keep-alive
+Content-Length: 33
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+Origin: http://192.168.8.118
+Content-Type: application/x-www-form-urlencoded
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Referer: http://192.168.8.118/login.html
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.9
+Cookie: bLanguage=en
+
+password=d2FsYWxhd2FzYWxh
+
+HTTP/1.0 302 Redirect
+Server: GoAhead-Webs
+Date: Tue Nov 15 15:34:11 2022
+Set-Cookie: ecos_pw=d2FsYWxhd2FzYWxh1qw:language=cn; path=/
+Pragma: no-cache
+Cache-Control: no-cache
+Content-Type: text/html
+Location: http://192.168.8.118/index.html
+
+-------------------------------
+
+POST /goform/loginOut HTTP/1.1
+Host: 192.168.8.102
+Connection: keep-alive
+Content-Length: 15
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded;
+Accept: */*
+Origin: http://192.168.8.102
+Referer: http://192.168.8.102/index.html
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.9
+Cookie: bLanguage=en; ecos_pw=d2FsYWxhd2FzYWxhbcx:language=cn
+
+action=loginout
+
+HTTP/1.0 200 OK
+
+{"errCode":"0"}
+
+-------------------------------
+
+GET /goform/getHomePageInfo??random=0.7189040724881826&modules=loginAuth%2CwifiRelay HTTP/1.1
+Host: 192.168.8.118
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.8.118/index.html
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.9
+Cookie: bLanguage=en; ecos_pw=d2FsYWxhd2FzYWxh1qw:language=cn
+
+HTTP/1.1 200 OK
+Content-type: text/plain; charset=utf-8
+Pragma: no-cache
+Cache-Control: no-cache
+
+{
+   "loginAuth":{
+      "hasLoginPwd":"true",
+      "username ":"admin"
+   },
+   "wifiRelay":{
+      "wifiRelayType":"client+ap",
+      "wifiRelaySSID":"name1",
+      "upperWifiSsid":"name1",
+      "extenderSsid":"name2",
+      "extenderPwd":"wifi_password",
+      "wifiRelayChannel":"6",
+      "wifiRelaySecurityMode":"wpawpa2/AES",
+      "wifiRelayPwd":"wifi_password",
+      "wifiRelayConnectStatus":"bridgeSuccess",
+      "connectState":"bridgeSuccess",
+      "connectDuration":"0"
+   }
+}
+
+-------------------------------
+
+GET /goform/getStatus?0.53651965944877&modules=internetStatus%2CwifiRelay HTTP/1.1
+Host: 192.168.8.118
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.8.118/index.html
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.9
+Cookie: bLanguage=en; ecos_pw=d2FsYWxhd2FzYWxh1qw:language=cn
+
+HTTP/1.1 200 OK
+Content-type: text/plain; charset=utf-8
+Pragma: no-cache
+Cache-Control: no-cache
+
+{
+   "internetStatus":{
+      "wanConnectStatus":"13022040",
+      "newLanIP":"255.255.255.255",
+      "lanWanIPConflict":"false"
+   },
+   "wifiRelay":{
+      "wifiRelayType":"client+ap",
+      "wifiRelaySSID":"name1",
+      "upperWifiSsid":"name1",
+      "extenderSsid":"name2",
+      "extenderPwd":"wifi_password",
+      "wifiRelayChannel":"6",
+      "wifiRelaySecurityMode":"wpawpa2/AES",
+      "wifiRelayPwd":"wifi_password",
+      "wifiRelayConnectStatus":"bridgeSuccess",
+      "connectState":"bridgeSuccess",
+      "connectDuration":"0"
+   }
+}
+
+-------------------------------
+
+GET /goform/getStatus?random=0.2729709691815765&modules=internetStatus%2CdeviceStatistics%2CsystemInfo%2CwanAdvCfg%2CwifiRelay HTTP/1.1
+Host: 192.168.8.118
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.8.118/index.html
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.9
+Cookie: bLanguage=en; ecos_pw=d2FsYWxhd2FzYWxh1qw:language=cn
+
+HTTP/1.1 200 OK
+Content-type: text/plain; charset=utf-8
+Pragma: no-cache
+Cache-Control: no-cache
+
+{
+   "internetStatus":{
+      "wanConnectStatus":"13022040",
+      "newLanIP":"255.255.255.255",
+      "lanWanIPConflict":"false"
+   },
+   "deviceStastics":{
+      "statusOnlineNumber":"0",
+      "statusBlackNum":"0",
+      "statusUpSpeed":"0",
+      "statusDownSpeed":"0",
+      "wifiRate":"-55",
+      "routerName":"name1",
+      "extendName":"name2"
+   },
+   "systemInfo":{
+      "wanConnectTime":"0",
+      "wanType":"dhcp",
+      "statusWanMAC":"50:0F:F5:AE:23:F8",
+      "macHost":"04:D9:F5:38:7A:CD",
+      "lanIP":"192.168.0.1",
+      "statusWanMask":"0.0.0.0",
+      "statusWanIP":"0.0.0.0",
+      "statusWanGaterway":"0.0.0.0",
+      "statusWanDns1":"",
+      "statusWanDns2":"",
+      "softVersion":"V12.01.01.52_multi"
+   },
+   "wanAdvCfg":{
+      "wanServerName":"",
+      "wanServiceName":"",
+      "wanType":"dhcp",
+      "wanMTU":"1500",
+      "wanMTUCurrent":"1500",
+      "wanSpeed":"Auto",
+      "wanSpeedCurrent":"100",
+      "macClone":"default",
+      "macRouter":"50:0F:F5:AE:23:F8",
+      "macWifiDevice":"false",
+      "macHost":"04:D9:F5:38:7A:CD",
+      "macCurrentWan":"50:0F:F5:AE:23:F8"
+   },
+   "wifiRelay":{
+      "wifiRelayType":"client+ap",
+      "wifiRelaySSID":"name1",
+      "upperWifiSsid":"name1",
+      "extenderSsid":"name2",
+      "extenderPwd":"wifi_password",
+      "wifiRelayChannel":"6",
+      "wifiRelaySecurityMode":"wpawpa2/AES",
+      "wifiRelayPwd":"wifi_password",
+      "wifiRelayConnectStatus":"bridgeSuccess",
+      "connectState":"bridgeSuccess",
+      "connectDuration":"0"
+   }
+}
+
+-------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

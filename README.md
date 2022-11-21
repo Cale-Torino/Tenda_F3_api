@@ -13,6 +13,8 @@
 
 # Summary
 
+Tested on F3 firmware version: `V12.01.01.52_multi`
+
 API doc containing endpoints that can be called to leverage the Tenda F3 WiFi extender router.
 
 These endpoints all run on the localhost `192.168.8.1` as an example.

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Reboot Tenda F3</title>
+<!-- Optional theme -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<!-- font-awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- jquery -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+<!-- <script type="text/javascript" src="j.js"></script> -->
+</head>
+<body>
+  <br>
+  <div class="container-fluid">
+    <hr style="border-top: 1px solid red;">
+  <div class="row">
+
+  <h1 class="mx-auto" style="width: 500px;"><span style="color:grey">Reboot Tenda F3 </span>Script</h1>
+  </div>
+  
+  <hr style="border-top: 1px solid red;">
+
+<div class="row">
+<div class="mx-auto" style="width: 500px;">
+<div class="bs-component">
+<div class="form-group">
+                    <br>
+                    <p>Enters credentials and reboots router: <a href="http://127.0.0.1/f3/index.html">http://127.0.0.1/f3/index.html</a></p>
+                    <p>This page runs in the local network where the router is operating.</p>
+                    <button id="btn" type="button" name="button" class="btn btn-primary btn-block">Login & reboot F3 router</button>
+                    <p id="data" style="margin:10px;"></p>
+                    <br>
+                    <!-- <a href="tester.php" target="_blank" class="btn btn-primary btn-block">Testing Page</a> -->
+                </div>
+        </div>
+</div>
+
+</div>
+
+<hr style="border-top: 1px solid red;">
+
+<div class="row">
+<div class="mx-auto" style="width: 700px;">
+<div class="table-responsive">          
+  <table class="table table-condensed table-hover">
+    <thead>
+      <tr>
+        <th id="cookie1">Cookie</th>
+        <th id="cookie2" style="color:green">empty</th>
+      </tr>
+      <tr>
+        <th id="result1">Result</th>
+        <th id="result2" style="color:green">empty</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td>Console log results are placed in the table above.</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+</div>
+
+<hr style="border-top: 1px solid red;">
+
+<script>
+$(document).ready(function(){
+$("#btn").click(function(){
+  var pass = "pass_here";
+  var psd = base64_encode(pass);
+  var ecos_pw = "";
+  Auth(psd);
+
+function base64_encode(s) {      
+    return btoa(unescape(encodeURIComponent(s)));
+}
+
+function error(err) {
+  console.log('Request Failed', err);
+  alert('Failed: ' + JSON.stringify(err));
+}
+
+function sysRebootSuccess(response) {
+  console.log('sysRebootSuccess: '+response);
+  document.getElementById('result2').innerHTML = response;
+}
+
+function sysReboot(Cookie) {
+  var postdata = 'module1=sysOperate&action=reboot';
+  var xhr = new XMLHttpRequest();
+  xhr.onerror = error;
+  xhr.open('POST', 'http://127.0.0.1/f3/curl.php?data=POST&url=http://192.168.8.102/goform/sysReboot&postdata='+postdata+'&cookie='+Cookie, true);
+  xhr.onreadystatechange = function () {
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+        var response = xhr.responseText;
+        sysRebootSuccess(response);
+        }
+    }
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded;charset=UTF-8');
+  xhr.send(null);
+}
+
+function AuthSuccess(response,Cookie) {
+  console.log('AuthSuccess: '+response);
+  mo = JSON.parse(Cookie);
+  ecos_pw = mo.Cookie;
+  console.log('Cookie: '+Cookie);
+  document.getElementById('cookie2').innerHTML = ecos_pw;
+  sysReboot(ecos_pw);
+}
+
+function Auth(psd) {
+  var postdata = 'password='+psd;
+  var xhr = new XMLHttpRequest();
+  xhr.onerror = error;
+  xhr.open('POST', 'http://127.0.0.1/f3/curl.php?data=POST&url=http://192.168.8.102/login/Auth&postdata='+postdata, true);
+  xhr.onreadystatechange = function () {
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+        var response = xhr.responseText;
+        var Cookie = xhr.getResponseHeader("Cookie");
+        //var contentType =xhr.getAllResponseHeaders();
+        AuthSuccess(response,Cookie);
+        }
+    }
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded;charset=UTF-8');
+  xhr.send(null);
+}
+
+});
+console.log("Ready");
+});
+
+</script>
+</body>
+</html>
