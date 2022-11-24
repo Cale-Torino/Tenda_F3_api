@@ -31,6 +31,7 @@ These endpoints all run on the localhost `192.168.8.1` as an example.
 - Usage Examples
 - Endpoint API Calls
     - Auth
+    - sysReboot
 
 # Usage Examples
 
