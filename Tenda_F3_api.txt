@@ -2,32 +2,13 @@ Tenda_F3_api
 
 http://192.168.8.118/login/Auth
 
+http://192.168.8.118/goform/loginOut
+
 http://192.168.8.118/goform/getHomePageInfo??random=0.7189040724881826&modules=loginAuth%2CwifiRelay
-
-
 
 http://192.168.8.118/goform/getStatus?0.53651965944877&modules=internetStatus%2CwifiRelay
 
 http://192.168.8.118/goform/getStatus?random=0.2729709691815765&modules=internetStatus%2CdeviceStatistics%2CsystemInfo%2CwanAdvCfg%2CwifiRelay
-
--------------------------------
-
-
-
--------------------------------
-
-
-
--------------------------------
-
-
-
--------------------------------
-
-
--------------------------------
-
-
 
 -------------------------------
 
