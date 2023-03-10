@@ -47,6 +47,59 @@ These endpoints all run on the localhost `192.168.8.1` as an example.
 ### Calling Parameters (Input)
 | Parameter  |  Mode  | Description  | example values  |
 | :------------ | :------------ | :------------ | :------------ |
+|`password`      |string |Https      |d2FsYWxhd2FzYWxh |
+
+```
+password=d2FsYWxhd2FzYWxh
+```
+
+### Interface Address
+
+http://192.168.8.118/login/Auth
+
+### Request Method
+
+- HTTP 
+- POST
+
+### Response Parameters (Output)
+| Parameter  |  Mode  | Description  | example values  |
+| :------------ | :------------ | :------------ | :------------ |
+|`ecos_pw`            |string      |Https        |d2FsYWxhd2FzYWxh1qw  |
+|`language`            |string      |Https        |cn                  |
+
+```
+Set-Cookie: ecos_pw=d2FsYWxhd2FzYWxh1qw:language=cn; path=/
+```
+
+### Example:
+
+- Returned data: HTTP/1.0 302 Redirect
+   - Set-Cookie: ecos_pw=d2FsYWxhd2FzYWxh1qw:language=cn; path=/
+   - Location: http://192.168.8.118/index.html
+- Example: 
+   - ecos_pw
+   - language
+   - path
+
+### Response Result Example
+```JSON
+No JSON
+```
+
+---
+---
+---
+
+## 2. loginOut
+
+`Get Auth` [*Auth and login to router*]
+
+-------------------
+
+### Calling Parameters (Input)
+| Parameter  |  Mode  | Description  | example values  |
+| :------------ | :------------ | :------------ | :------------ |
 |`NULL`      |NULL |NULL      |NULL |
 
 ### Interface Address
