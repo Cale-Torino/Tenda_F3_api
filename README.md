@@ -93,6 +93,62 @@ No JSON
 
 ## 2. loginOut
 
+`logout` [*logout of the router*]
+
+-------------------
+
+### Calling Parameters (Input)
+| Parameter  |  Mode  | Description  | example values  |
+| :------------ | :------------ | :------------ | :------------ |
+|`action`      |string |Https      |loginout |
+
+```
+action=loginout
+```
+
+### Interface Address
+
+http://192.168.8.118/goform/loginOut
+
+### Request Method
+
+- HTTP 
+- POST
+
+### Response Parameters (Output)
+| Parameter  |  Mode  | Description  | example values  |
+| :------------ | :------------ | :------------ | :------------ |
+|`errCode`            |int      |Https        |0  |
+|`language`            |string      |Https        |cn                  |
+|`bLanguage`            |string      |Https        |en                  |
+|`ecos_pw`            |string      |Https        |d2FsYWxhd2FzYWxhbcx                  |
+
+```
+Cookie: bLanguage=en; ecos_pw=d2FsYWxhd2FzYWxhbcx:language=cn
+```
+
+### Example:
+
+- Returned data: HTTP/1.0 200 OK
+   - Cookie: bLanguage=en; ecos_pw=d2FsYWxhd2FzYWxhbcx:language=cn
+   - Content-Type: application/x-www-form-urlencoded;
+- Example: 
+   - ecos_pw
+   - language
+   - bLanguage
+   - errCode
+
+### Response Result Example
+```JSON
+{"errCode":"0"}
+```
+
+---
+---
+---
+
+## 2. loginOut
+
 `Get Auth` [*Auth and login to router*]
 
 -------------------
