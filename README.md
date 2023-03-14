@@ -120,8 +120,8 @@ http://192.168.8.118/goform/loginOut
 | :------------ | :------------ | :------------ | :------------ |
 |`errCode`            |int      |Https        |0  |
 |`language`            |string      |Https        |cn                  |
-|`bLanguage`            |string      |Https        |en                  |
-|`ecos_pw`            |string      |Https        |d2FsYWxhd2FzYWxhbcx                  |
+|`bLanguage`            |string      |Https        |en                 |
+|`ecos_pw`            |string      |Https        |d2FsYWxhd2FzYWxhbcx  |
 
 ```
 Cookie: bLanguage=en; ecos_pw=d2FsYWxhd2FzYWxhbcx:language=cn
@@ -141,6 +141,94 @@ Cookie: bLanguage=en; ecos_pw=d2FsYWxhd2FzYWxhbcx:language=cn
 ### Response Result Example
 ```JSON
 {"errCode":"0"}
+```
+
+---
+---
+---
+
+## 3. getHomePageInfo
+
+`Get getHomePageInfo` [*Get the home page info*]
+
+-------------------
+
+### Calling Parameters (Input)
+| Parameter  |  Mode  | Description  | example values  |
+| :------------ | :------------ | :------------ | :------------ |
+|`NULL`      |NULL |NULL      |NULL |
+
+### Interface Address
+
+http://192.168.8.118/goform/getHomePageInfo
+
+### Request Method
+
+- HTTP 
+- GET
+
+### Response Parameters (Output)
+| Parameter  |  Mode  | Description  | example values  |
+| :------------ | :------------ | :------------ | :------------ |
+|`hasLoginPwd`            |bool      |Https        |true                   |
+|`username`            |string      |Https        |admin                          |
+|`wifiRelayType`            |string      |Https        |client+ap   |
+|`wifiRelaySSID`            |string      |Https        |name1   |
+|`upperWifiSsid`            |string      |Https        |name1   |
+|`extenderSsid`            |string      |Https        |name2   |
+|`extenderPwd`            |string      |Https        |wifi_password   |
+|`wifiRelayChannel`            |int      |Https        |6   |
+|`wifiRelaySecurityMode`            |string      |Https        |wpawpa2/AES   |
+|`wifiRelayPwd`            |string      |Https        |wifi_password   |
+|`wifiRelayConnectStatus`            |string      |Https        |bridgeSuccess   |
+|`connectState`            |string      |Https        |bridgeSuccess   |
+|`connectDuration`            |int      |Https        |0   |
+
+```
+Cookie: bLanguage=en; ecos_pw=d2FsYWxhd2FzYWxhbcx:language=cn
+```
+
+### Example:
+
+- Returned data: HTTP/1.1 200 OK
+   - Cookie: bLanguage=en; ecos_pw=d2FsYWxhd2FzYWxh1qw:language=cn
+   - Content-type: text/plain; charset=utf-8
+- Example: 
+   - hasLoginPwd          
+   - username
+   - wifiRelayType
+   - wifiRelaySSID
+   - upperWifiSsid  
+   - extenderSsid       
+   - extenderPwd     
+   - wifiRelayChannel
+   - wifiRelaySecurityMode
+   - wifiRelayPwd      
+   - wifiRelayConnectStatus
+   - connectState  
+   - connectDuration
+
+### Response Result Example
+```JSON
+{
+   "loginAuth":{
+      "hasLoginPwd":"true",
+      "username ":"admin"
+   },
+   "wifiRelay":{
+      "wifiRelayType":"client+ap",
+      "wifiRelaySSID":"name1",
+      "upperWifiSsid":"name1",
+      "extenderSsid":"name2",
+      "extenderPwd":"wifi_password",
+      "wifiRelayChannel":"6",
+      "wifiRelaySecurityMode":"wpawpa2/AES",
+      "wifiRelayPwd":"wifi_password",
+      "wifiRelayConnectStatus":"bridgeSuccess",
+      "connectState":"bridgeSuccess",
+      "connectDuration":"0"
+   }
+}
 ```
 
 ---
