@@ -235,6 +235,81 @@ Cookie: bLanguage=en; ecos_pw=d2FsYWxhd2FzYWxhbcx:language=cn
 ---
 ---
 
+## 4. getStatus
+
+`Get Status` [*gets the Status*]
+
+-------------------
+
+### Calling Parameters (Input)
+| Parameter  |  Mode  | Description  | example values  |
+| :------------ | :------------ | :------------ | :------------ |
+|`NULL`      |NULL |NULL      |NULL |
+
+### Interface Address
+
+http://192.168.8.118/goform/getStatus
+
+### Request Method
+
+- HTTP 
+- GET
+
+### Response Parameters (Output)
+| Parameter  |  Mode  | Description  | example values  |
+| :------------ | :------------ | :------------ | :------------ |
+|`wanConnectStatus`    |string      |Https        |13022040  |
+|`newLanIP`            |string      |Https        |255.255.255.255   |
+|`lanWanIPConflict`    |string      |Https        |false   |
+|`wifiRelayType`       |string      |Https        |client+ap   |
+|`wifiRelaySSID`       |string      |Https        |name1   |
+|`upperWifiSsid`       |string      |Https        |name1   |
+|`extenderSsid`        |string      |Https        |name2   |
+|`extenderPwd`         |string      |Https        |wifi_password   |
+|`wifiRelayChannel`         |string      |Https        |6   |
+|`wifiRelaySecurityMode`    |string      |Https        |wpawpa2/AES   |
+|`wifiRelayPwd`             |string      |Https        |wifi_password   |
+|`wifiRelayConnectStatus`   |string      |Https        |bridgeSuccess   |
+|`connectState`             |string      |Https        |bridgeSuccess   |
+|`connectDuration`          |string      |Https        |0   |
+
+```
+Cookie: bLanguage=en; ecos_pw=d2FsYWxhd2FzYWxhbcx:language=cn
+```
+
+### Example:
+
+- Returned data: HTTP/1.1 200 OK
+   - Content-type: text/plain; charset=utf-8
+
+### Response Result Example
+```JSON
+{
+   "internetStatus":{
+      "wanConnectStatus":"13022040",
+      "newLanIP":"255.255.255.255",
+      "lanWanIPConflict":"false"
+   },
+   "wifiRelay":{
+      "wifiRelayType":"client+ap",
+      "wifiRelaySSID":"name1",
+      "upperWifiSsid":"name1",
+      "extenderSsid":"name2",
+      "extenderPwd":"wifi_password",
+      "wifiRelayChannel":"6",
+      "wifiRelaySecurityMode":"wpawpa2/AES",
+      "wifiRelayPwd":"wifi_password",
+      "wifiRelayConnectStatus":"bridgeSuccess",
+      "connectState":"bridgeSuccess",
+      "connectDuration":"0"
+   }
+}
+```
+
+---
+---
+---
+
 ## 2. loginOut
 
 `Get Auth` [*Auth and login to router*]
