@@ -310,6 +310,106 @@ Cookie: bLanguage=en; ecos_pw=d2FsYWxhd2FzYWxhbcx:language=cn
 ---
 ---
 
+## 5. loginOut
+
+`Get Status` [*Get Status*]
+
+-------------------
+
+### Calling Parameters (Input)
+| Parameter  |  Mode  | Description  | example values  |
+| :------------ | :------------ | :------------ | :------------ |
+|`NULL`      |NULL |NULL      |NULL |
+
+### Interface Address
+
+http://192.168.8.118/goform/getStatus
+
+### Request Method
+
+- HTTP 
+- GET
+
+### Response Parameters (Output)
+| Parameter  |  Mode  | Description  | example values  |
+| :------------ | :------------ | :------------ | :------------ |
+|`null`            |string      |Https        |Cape Town                   |
+|`null`            |string      |Https        |1                           |
+|`null`            |string      |Https        |null   |
+|`null`            |string      |Https        |null   |
+
+### Example:
+
+- Returned data: 
+   - data
+- Example: 
+   - data
+   - data
+
+### Response Result Example
+```JSON
+{
+   "internetStatus":{
+      "wanConnectStatus":"13022040",
+      "newLanIP":"255.255.255.255",
+      "lanWanIPConflict":"false"
+   },
+   "deviceStastics":{
+      "statusOnlineNumber":"0",
+      "statusBlackNum":"0",
+      "statusUpSpeed":"0",
+      "statusDownSpeed":"0",
+      "wifiRate":"-55",
+      "routerName":"name1",
+      "extendName":"name2"
+   },
+   "systemInfo":{
+      "wanConnectTime":"0",
+      "wanType":"dhcp",
+      "statusWanMAC":"50:0F:F5:AE:23:F8",
+      "macHost":"04:D9:F5:38:7A:CD",
+      "lanIP":"192.168.0.1",
+      "statusWanMask":"0.0.0.0",
+      "statusWanIP":"0.0.0.0",
+      "statusWanGaterway":"0.0.0.0",
+      "statusWanDns1":"",
+      "statusWanDns2":"",
+      "softVersion":"V12.01.01.52_multi"
+   },
+   "wanAdvCfg":{
+      "wanServerName":"",
+      "wanServiceName":"",
+      "wanType":"dhcp",
+      "wanMTU":"1500",
+      "wanMTUCurrent":"1500",
+      "wanSpeed":"Auto",
+      "wanSpeedCurrent":"100",
+      "macClone":"default",
+      "macRouter":"50:0F:F5:AE:23:F8",
+      "macWifiDevice":"false",
+      "macHost":"04:D9:F5:38:7A:CD",
+      "macCurrentWan":"50:0F:F5:AE:23:F8"
+   },
+   "wifiRelay":{
+      "wifiRelayType":"client+ap",
+      "wifiRelaySSID":"name1",
+      "upperWifiSsid":"name1",
+      "extenderSsid":"name2",
+      "extenderPwd":"wifi_password",
+      "wifiRelayChannel":"6",
+      "wifiRelaySecurityMode":"wpawpa2/AES",
+      "wifiRelayPwd":"wifi_password",
+      "wifiRelayConnectStatus":"bridgeSuccess",
+      "connectState":"bridgeSuccess",
+      "connectDuration":"0"
+   }
+}
+```
+
+---
+---
+---
+
 ## 2. loginOut
 
 `Get Auth` [*Auth and login to router*]
