@@ -35,6 +35,41 @@ These endpoints all run on the localhost `192.168.8.1` as an example.
 
 # Usage Examples
 
+JS example using `XMLHttpRequest()` to call `curl.php`
+
+```JS
+ var pass = "pass_here";
+ var psd = base64_encode(pass);
+ var ecos_pw = "";
+ Auth(psd);
+
+function AuthSuccess(response,Cookie) {
+  console.log('AuthSuccess: '+response);
+  const mo = JSON.parse(Cookie);
+  ecos_pw = mo.Cookie;
+  console.log('Cookie: '+Cookie);
+  document.getElementById('cookie2').innerHTML = ecos_pw;
+  sysReboot(ecos_pw);
+}
+
+function Auth(psd) {
+  var postdata = 'password='+psd;
+  var xhr = new XMLHttpRequest();
+  xhr.onerror = error;
+  xhr.open('POST', 'http://127.0.0.1/f3/curl.php?data=POST&url=http://192.168.8.102/login/Auth&postdata='+postdata, true);
+  xhr.onreadystatechange = function () {
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+        var response = xhr.responseText;
+        var Cookie = xhr.getResponseHeader("Cookie");
+        //var contentType =xhr.getAllResponseHeaders();
+        AuthSuccess(response,Cookie);
+        }
+    }
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded;charset=UTF-8');
+  xhr.send(null);
+}
+```
+
 
 # Endpoint API Calls
 
@@ -409,50 +444,3 @@ http://192.168.8.118/goform/getStatus
 ---
 ---
 ---
-
-## 2. loginOut
-
-`Get Auth` [*Auth and login to router*]
-
--------------------
-
-### Calling Parameters (Input)
-| Parameter  |  Mode  | Description  | example values  |
-| :------------ | :------------ | :------------ | :------------ |
-|`NULL`      |NULL |NULL      |NULL |
-
-### Interface Address
-
-http://192.168.8.118/login/Auth
-
-### Request Method
-
-- HTTP 
-- GET
-
-### Response Parameters (Output)
-| Parameter  |  Mode  | Description  | example values  |
-| :------------ | :------------ | :------------ | :------------ |
-|`null`            |string      |Https        |Cape Town                   |
-|`null`            |string      |Https        |1                           |
-|`null`            |string      |Https        |null   |
-|`null`            |string      |Https        |null   |
-
-### Example:
-
-- Returned data: 
-   - data
-- Example: 
-   - data
-   - data
-
-### Response Result Example
-```JSON
-
-```
-
----
----
----
-
-
